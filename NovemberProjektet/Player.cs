@@ -4,8 +4,12 @@ namespace NovemberProjektet
 {
     public class Player
     {
-        int[] board = new int[10,10];
+        int[,] board = new int[10,10];
 
-        public placeShipps();
+        int[,] ships = new int[10, 10];
+
+        public int[,] placeShipps(){
+            return ships;
+        }
     }
 }
