@@ -4,6 +4,10 @@ namespace NovemberProjektet
 {
     class Program
     {
+        enum rotation {
+            Vertical,
+            Horizontal
+        }
         static void Main(string[] args)
         {
             Player player1 = new Player();
