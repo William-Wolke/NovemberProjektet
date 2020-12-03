@@ -4,9 +4,16 @@ namespace NovemberProjektet
 {
     class Program
     {
+        enum rotation {
+            Vertical,
+            Horizontal
+        }
         static void Main(string[] args)
         {
-            Console.Write("Hello World!");
+            Player player1 = new Player();
+            Player player2 = new Player();
+
+            Console.WriteLine("Sänka skepp");
         }
     }
 }
