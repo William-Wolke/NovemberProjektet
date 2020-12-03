@@ -1,0 +1,13 @@
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.exe
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.deps.json
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.runtimeconfig.json
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.runtimeconfig.dev.json
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.dll
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\bin\Debug\netcoreapp3.1\NovemberProjektet.pdb
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.csprojAssemblyReference.cache
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.AssemblyInfoInputs.cache
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.AssemblyInfo.cs
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.csproj.CoreCompileInputs.cache
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.dll
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.pdb
+C:\Users\william.wolke\Documents\Programering 2\NovemberProjektet\NovemberProjektet\obj\Debug\netcoreapp3.1\NovemberProjektet.genruntimeconfig.cache
