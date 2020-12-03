@@ -5,21 +5,29 @@ namespace NovemberProjektet
 {
     public class Boat
     {
-        enum rotation {
-            Vertical,
-            Horizontal
-        }
+
         public int length;
         
         public string direction = "vertical";
 
-        public shipRotation = rotation.Vertical;
+        //public shipRotation;
 
         private Random generator = new Random();
-    }
 
-    public Boat()
-    {
-        int randomRotation = generator.Next()
+        public Boat()
+        {
+            int randomRotation = generator.Next(0, 1);
+
+            length = 1;
+
+            
+    
+        }
+
+        public int BuildShip() {
+            return 1;
+        }
     }
 }
+
+    
