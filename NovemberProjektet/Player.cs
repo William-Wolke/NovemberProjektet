@@ -6,9 +6,10 @@ namespace NovemberProjektet
     {
         int[,] board = new int[10,10];
 
-        int[,] ships = new int[10, 10];
+        public int[,] ships = new int[10, 10];
 
-        public int[,] placeShipps(){
+        public int[,] placeShipps(int[,] ships)
+        {
             return ships;
         }
     }

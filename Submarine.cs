@@ -2,7 +2,7 @@ using System;
 
 namespace NovemberProjektet
 {
-    public class Ship
+    public class Submarine
     {
         
     }

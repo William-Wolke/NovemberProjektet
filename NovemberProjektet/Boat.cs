@@ -3,12 +3,16 @@ using System;
 
 namespace NovemberProjektet
 {
-    public class Boat
+    public abstract class Boat
     {
 
-        public int length;
+        protected int length;
         
         public string direction = "vertical";
+
+        protected int xPos;
+
+        protected int yPos;
 
         //public shipRotation;
 
@@ -16,12 +20,9 @@ namespace NovemberProjektet
 
         public Boat()
         {
-            int randomRotation = generator.Next(0, 1);
+            //int randomRotation = generator.Next(0, 1);
 
-            length = 1;
-
-            
-    
+            //length = 1;
         }
 
         public int BuildShip() {
