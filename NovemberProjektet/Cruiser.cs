@@ -13,9 +13,6 @@ namespace NovemberProjektet
             //int randomRotation = generator.Next(0, 1);
 
             //length = 1;
-
-            
-    
         }
 
         public int BuildShip() {
