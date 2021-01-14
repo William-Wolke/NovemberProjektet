@@ -2,7 +2,7 @@ using System;
 
 namespace NovemberProjektet
 {
-    public class Cruiser: Boat
+    class Cruiser
     {
         int length = 3;
         public Cruiser(int xPos, int yPos)

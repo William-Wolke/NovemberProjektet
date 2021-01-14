@@ -3,7 +3,7 @@ using System;
 
 namespace NovemberProjektet
 {
-    public class Carrier: Boat
+    class Carrier
     {
         int length = 5;
         public Carrier(int xPos, int yPos)

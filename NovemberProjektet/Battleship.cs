@@ -2,7 +2,7 @@ using System;
 
 namespace NovemberProjektet
 {
-    public class Battleship: Boat
+    class Battleship
     {
         int length = 4;
         public Battleship(int xPos, int yPos)
