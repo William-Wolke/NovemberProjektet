@@ -4,22 +4,22 @@ namespace NovemberProjektet
 {
     class Battleship
     {
-        int length = 4;
-        public Battleship(int xPos, int yPos)
-        {
-            this.xPos = xPos;
+        int length;
+        public string direction = "vertical";
+        protected int xPos;
+        protected int yPos;
+        //public shipRotation;
+        Random generator = new Random();
 
-            this.yPos = yPos;
-            //int randomRotation = generator.Next(0, 1);
+        
 
-            //length = 1;
+        public int[,] BuildShip() {
 
-            
-    
-        }
+            int[,] shipPosition = new int[10,10];  
 
-        public int BuildShip() {
-            return 1;
-        }
+            shipPosition[generator.Next(0, 10), generator.Next(0, 10)] = 1;
+
+            return shipPosition;
+        } 
     }
 }

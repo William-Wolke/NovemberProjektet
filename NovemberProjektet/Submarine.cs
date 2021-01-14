@@ -11,12 +11,6 @@ namespace NovemberProjektet
         //public shipRotation;
         protected Random generator = new Random();
 
-        public Boat()
-        {
-            //int randomRotation = generator.Next(0, 1);
-
-            //length = 1;
-        }
 
         public int[,] BuildShip() {
 

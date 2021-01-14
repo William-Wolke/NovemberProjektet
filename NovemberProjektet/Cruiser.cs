@@ -4,19 +4,22 @@ namespace NovemberProjektet
 {
     class Cruiser
     {
-        int length = 3;
-        public Cruiser(int xPos, int yPos)
-        {
-            this.xPos = xPos;
+        int length;
+        public string direction = "vertical";
+        protected int xPos;
+        protected int yPos;
+        //public shipRotation;
+        Random generator = new Random();
 
-            this.yPos = yPos;
-            //int randomRotation = generator.Next(0, 1);
+        
 
-            //length = 1;
-        }
+        public int[,] BuildShip() {
 
-        public int BuildShip() {
-            return 1;
-        }
+            int[,] shipPosition = new int[10,10];  
+
+            shipPosition[generator.Next(0, 10), generator.Next(0, 10)] = 1;
+
+            return shipPosition;
+        } 
     }
 }

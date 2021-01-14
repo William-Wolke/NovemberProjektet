@@ -28,7 +28,6 @@ namespace NovemberProjektet
             PlayerPlaceShips(carriers, battleships, cruisers, submarines, destroyers);
             //kör spelet
             PlayGame(player1, player2);
-
         }
 
         static void PlayerPlaceShips(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers){
@@ -53,12 +52,28 @@ namespace NovemberProjektet
                         string[] answerSplit = answer.Split(',');
                         bool succesX = int.TryParse(answerSplit[0], out x);
                         bool succesY = int.TryParse(answerSplit[1], out y);
-                        //Kollar så att positionen inte är out of bounds
+
+                        CheckBounds(x, y, succesX, succesY, finished);
+                    }
+                    else // feedback till användaren om vad som ska skrivas in.
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
+                        Console.WriteLine();
+                    }
+                }
+            }
+            
+        }
+
+        static void CheckBounds(int x, int y, bool succesX, bool succesY, bool finished) {
+            //Kollar så att positionen inte är out of bounds
                         if (x < 0 || x > 10 || y < 0 || y > 10)
                         {
                             Console.WriteLine();
                             Console.WriteLine("Du angav en korrdinat utanför spelfältet");
                             Console.WriteLine();
+                            //kollar om x och y är värden som inte funkar så ger man feedback
                         }else if (!succesX || !succesY) //feedback till användaren
                         {
                             Console.WriteLine();
@@ -71,16 +86,6 @@ namespace NovemberProjektet
                             Console.ReadLine();
                             finished = true;
                         }
-                    }
-                    else // feedback till användaren om vad som ska skrivas in.
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
-                        Console.WriteLine();
-                    }
-                }
-            }
-            
         }
 
         static void PlayGame(Player player1, Player player2){
