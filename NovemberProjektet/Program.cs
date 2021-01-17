@@ -259,5 +259,12 @@ namespace NovemberProjektet
                 destroyers[i] = new Destroyer(x, y);
             }
         }
+
+        //För att porta spelet till andra plattformar så hade jag använt mig av unity. Unity skrivs också i C# vilket gör det lättare att byta till den plattformen
+        //I unity hade man kunnat göra så att spelet kan komma till andra plattformar genom att t.ex. göra ett skärmtangentbord på skämen som man anger position i.
+        //Eller göra en visuel spelplan som man navigerar med en kontroll, datormus, touchskärm och sätter ut skepp, dessa lösningar hade man kunnat spela på samung smart fridge eller xbox eller telefon eller något liknande.
+        
+        //För att göra koden otroligt mycket enklare att läsa och göra prestandan bättre för programmet och gjort det mindre så hade jag velat göra en metod som PLayerPlaceShips som hade gjort
+        //istället för att ha en egen metod för den datatypen en universiell metod som hade tagit in olika datatyper i parametern och då kunnat göra samma jobb med mindre kod och bättre prestanda. 
     }
 }
