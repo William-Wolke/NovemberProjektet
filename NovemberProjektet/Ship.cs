@@ -2,7 +2,7 @@ using System;
 
 namespace NovemberProjektet
 {
-    public abstract class Ship
+    public class Ship
     {
         //get set, alla klasser som ärver får variabeln och får själv seta den.
         public int length {get; set;}
