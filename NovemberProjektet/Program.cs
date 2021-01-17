@@ -14,7 +14,9 @@ namespace NovemberProjektet
             //instansierar de båda spelarna
             Player player1 = new Player();
             Player player2 = new Player();
-            
+
+            int shipLength = 0;
+
             Console.WriteLine("Sänka skepp");
             Console.WriteLine("-------------------------------------------------------------------------------");
             Console.WriteLine();
@@ -24,20 +26,26 @@ namespace NovemberProjektet
             Cruiser[] cruisers = new Cruiser[3];
             Submarine[] submarines = new Submarine[4];
             Destroyer[] destroyers = new Destroyer[5];
+
             //Metod för att sätta ut sina skepp, tar med sig 
-            PlayerPlaceShips(carriers, battleships, cruisers, submarines, destroyers);
-            //kör spelet
-            PlayGame(player1, player2);
+            PlayerPlaceCarriers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
+            PlayerPlaceBattleships(carriers, battleships, cruisers, submarines, destroyers, shipLength);
+            PlayerPlaceCruisers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
+            PlayerPlaceSubmarines(carriers, battleships, cruisers, submarines, destroyers, shipLength);
+            PlayerPlaceDestroyers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
+            /*//kör spelet
+            PlayGame(player1, player2);*/
+            Console.ReadLine();
         }
 
-        static void PlayerPlaceShips(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers){
-            int x;
-            int y;
+        static void PlayerPlaceCarriers(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
+            int xPos;
+            int yPos;
+            shipLength = Carrier.carrierLength;
             bool finished = false;
 
-
-            Console.WriteLine("Sätt ut dina skepp:");
-            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> 10");
+            Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
+            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> " + (10-shipLength));
             Console.WriteLine();
             //Sätta ut skeppen, slutar inte förens den är klar
             while (finished == false)
@@ -50,10 +58,10 @@ namespace NovemberProjektet
                     if (answer.Contains(',')){
                         //splittar svaret så att man får svaret från kordinatsystem x,y till två positioner man kan stoppa in i en int[] array.
                         string[] answerSplit = answer.Split(',');
-                        bool succesX = int.TryParse(answerSplit[0], out x);
-                        bool succesY = int.TryParse(answerSplit[1], out y);
+                        bool succesX = int.TryParse(answerSplit[0], out xPos);
+                        bool succesY = int.TryParse(answerSplit[1], out yPos);
 
-                        CheckBounds(x, y, succesX, succesY, finished);
+                        finished = CheckBounds(xPos, yPos, succesX, succesY, finished, carriers, battleships, cruisers, submarines, destroyers, i, shipLength);
                     }
                     else // feedback till användaren om vad som ska skrivas in.
                     {
@@ -66,40 +74,190 @@ namespace NovemberProjektet
             
         }
 
-        static void CheckBounds(int x, int y, bool succesX, bool succesY, bool finished) {
-            //Kollar så att positionen inte är out of bounds
-                        if (x < 0 || x > 10 || y < 0 || y > 10)
+        static void PlayerPlaceBattleships(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
+            int xPos;
+            int yPos;
+            shipLength = Battleship.battleshipLength;
+            bool finished = false;
+
+            Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
+            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> " + (10-shipLength));
+            Console.WriteLine();
+            //Sätta ut skeppen, slutar inte förens den är klar
+            while (finished == false)
+            {
+                for (int i = 0; i < battleships.Length; i++)
+                {   //Skriver ut båten och vilken längd den har så man vet hur man ska sätta ut den.
+                    Console.Write("Battleship "+ (i+1) +"/" + battleships.Length +" : ");
+                    string answer = Console.ReadLine();
+                    //Felhantering så att användaren skriver in en korrekt position x,y.
+                    if (answer.Contains(',')){
+                        //splittar svaret så att man får svaret från kordinatsystem x,y till två positioner man kan stoppa in i en int[] array.
+                        string[] answerSplit = answer.Split(',');
+                        bool succesX = int.TryParse(answerSplit[0], out xPos);
+                        bool succesY = int.TryParse(answerSplit[1], out yPos);
+
+                        finished = CheckBounds(xPos, yPos, succesX, succesY, finished, carriers, battleships, cruisers, submarines, destroyers, i, shipLength);
+                    }
+                    else // feedback till användaren om vad som ska skrivas in.
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
+                        Console.WriteLine();
+                    }
+                }
+            }   
+        }
+
+        static void PlayerPlaceCruisers(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
+            int xPos;
+            int yPos;
+            shipLength = Cruiser.cruiserLength;
+            bool finished = false;
+
+            Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
+            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> " + (10-shipLength));
+            Console.WriteLine();
+            //Sätta ut skeppen, slutar inte förens den är klar
+            while (finished == false)
+            {
+                for (int i = 0; i < cruisers.Length; i++)
+                {   //Skriver ut båten och vilken längd den har så man vet hur man ska sätta ut den.
+                    Console.Write("Battleship "+ (i+1) +"/" + cruisers.Length +" : ");
+                    string answer = Console.ReadLine();
+                    //Felhantering så att användaren skriver in en korrekt position x,y.
+                    if (answer.Contains(',')){
+                        //splittar svaret så att man får svaret från kordinatsystem x,y till två positioner man kan stoppa in i en int[] array.
+                        string[] answerSplit = answer.Split(',');
+                        bool succesX = int.TryParse(answerSplit[0], out xPos);
+                        bool succesY = int.TryParse(answerSplit[1], out yPos);
+
+                        finished = CheckBounds(xPos, yPos, succesX, succesY, finished, carriers, battleships, cruisers, submarines, destroyers, i, shipLength);
+                    }
+                    else // feedback till användaren om vad som ska skrivas in.
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
+                        Console.WriteLine();
+                    }
+                }
+            }   
+        }
+
+        static void PlayerPlaceSubmarines(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
+            int xPos;
+            int yPos;
+            shipLength = Submarine.submarineLength;
+            bool finished = false;
+
+            Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
+            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> " + (10-shipLength));
+            Console.WriteLine();
+            //Sätta ut skeppen, slutar inte förens den är klar
+            while (finished == false)
+            {
+                for (int i = 0; i < submarines.Length; i++)
+                {   //Skriver ut båten och vilken längd den har så man vet hur man ska sätta ut den.
+                    Console.Write("Battleship "+ (i+1) +"/" + submarines.Length +" : ");
+                    string answer = Console.ReadLine();
+                    //Felhantering så att användaren skriver in en korrekt position x,y.
+                    if (answer.Contains(',')){
+                        //splittar svaret så att man får svaret från kordinatsystem x,y till två positioner man kan stoppa in i en int[] array.
+                        string[] answerSplit = answer.Split(',');
+                        bool succesX = int.TryParse(answerSplit[0], out xPos);
+                        bool succesY = int.TryParse(answerSplit[1], out yPos);
+
+                        finished = CheckBounds(xPos, yPos, succesX, succesY, finished, carriers, battleships, cruisers, submarines, destroyers, i, shipLength);
+                    }
+                    else // feedback till användaren om vad som ska skrivas in.
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
+                        Console.WriteLine();
+                    }
+                }
+            }   
+        }
+
+        static void PlayerPlaceDestroyers(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
+            int xPos;
+            int yPos;
+            shipLength = Destroyer.destroyerLength;
+            bool finished = false;
+
+            Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
+            Console.WriteLine("Skriv din x kordinat sedan , y kordinat (x,y) inom intervallet 0 --> " + (10-shipLength));
+            Console.WriteLine();
+            //Sätta ut skeppen, slutar inte förens den är klar
+            while (finished == false)
+            {
+                for (int i = 0; i < destroyers.Length; i++)
+                {   //Skriver ut båten och vilken längd den har så man vet hur man ska sätta ut den.
+                    Console.Write("Battleship "+ (i+1) +"/" + destroyers.Length +" : ");
+                    string answer = Console.ReadLine();
+                    //Felhantering så att användaren skriver in en korrekt position x,y.
+                    if (answer.Contains(',')){
+                        //splittar svaret så att man får svaret från kordinatsystem x,y till två positioner man kan stoppa in i en int[] array.
+                        string[] answerSplit = answer.Split(',');
+                        bool succesX = int.TryParse(answerSplit[0], out xPos);
+                        bool succesY = int.TryParse(answerSplit[1], out yPos);
+
+                        finished = CheckBounds(xPos, yPos, succesX, succesY, finished, carriers, battleships, cruisers, submarines, destroyers, i, shipLength);
+                    }
+                    else // feedback till användaren om vad som ska skrivas in.
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 9,3");
+                        Console.WriteLine();
+                    }
+                }
+            }   
+        }
+
+        static bool CheckBounds(int x, int y, bool succesX, bool succesY, bool finished, Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int i, int shipLength) {
+            //Kollar så att positionen inte är out of bounds eller att skeppet inte får plats.
+                        if (x < 0 || x > 10 - shipLength || y < 0 || y > 10)
                         {
                             Console.WriteLine();
-                            Console.WriteLine("Du angav en korrdinat utanför spelfältet");
+                            Console.WriteLine("Du angav en korrdinat utanför spelfältet eller så får ditt skepp inte plats");
                             Console.WriteLine();
-                            //kollar om x och y är värden som inte funkar så ger man feedback
+                            //kollar om x och y är värden som inte funkar, text etc.
                         }else if (!succesX || !succesY) //feedback till användaren
                         {
                             Console.WriteLine();
                             Console.WriteLine("Du måste ange 2 nuffror med kommateken mellan. Ex: 1,8");
                             Console.WriteLine();
                         }
-                        else{ //
-                            carriers[i] = new Carrier(x, y);
-                            Console.WriteLine("Du har skapat alla carriers");
-                            Console.ReadLine();
-                            finished = true;
+                        else{ //Skeppet får plats och är innanför bounds.
+                            CreateShip(i, carriers, battleships, cruisers, submarines, destroyers, x, y, shipLength);
+                            Console.WriteLine("Du har skapade skeppet");
+                            return finished = true;
                         }
+                        return false;
         }
 
-        static void PlayGame(Player player1, Player player2){
+        static void CreateShip(int i,Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int x, int y, int shipLength){
             
-            /*for (int i = 0; i < players.ships.GetLength(0); i++)
+            if (shipLength == 5)
             {
-                for (int j = 0; j < players.ships.GetLength(0); j++)
-                {
-                    Console.Write(players.ships[i,j] + " ");
-                }
-                Console.WriteLine();
+                carriers[i] = new Carrier(x, y);
             }
-            Console.ReadLine();*/
-
+            else if (shipLength == 4)
+            {
+                battleships[i] = new Battleship(x, y);
+            }
+            else if (shipLength == 3)
+            {
+                cruisers[i] = new Cruiser(x, y);
+            }
+            else if (shipLength == 2)
+            {
+                submarines[i] = new Submarine(x, y);
+            }
+            else if (shipLength == 1)
+            {
+                destroyers[i] = new Destroyer(x, y);
+            }
         }
     }
 }

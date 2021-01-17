@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\willi\\OneDrive\\Dokument\\Skola\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj": {}
+    "C:\\Users\\william.wolke\\Documents\\Programering 2\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\willi\\OneDrive\\Dokument\\Skola\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj": {
+    "C:\\Users\\william.wolke\\Documents\\Programering 2\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\willi\\OneDrive\\Dokument\\Skola\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj",
+        "projectUniqueName": "C:\\Users\\william.wolke\\Documents\\Programering 2\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj",
         "projectName": "NovemberProjektet",
-        "projectPath": "C:\\Users\\willi\\OneDrive\\Dokument\\Skola\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj",
-        "packagesPath": "C:\\Users\\willi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\willi\\OneDrive\\Dokument\\Skola\\NovemberProjektet\\NovemberProjektet\\obj\\",
+        "projectPath": "C:\\Users\\william.wolke\\Documents\\Programering 2\\NovemberProjektet\\NovemberProjektet\\NovemberProjektet.csproj",
+        "packagesPath": "C:\\Users\\william.wolke\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\william.wolke\\Documents\\Programering 2\\NovemberProjektet\\NovemberProjektet\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\willi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\william.wolke\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
         }
       }
     }
