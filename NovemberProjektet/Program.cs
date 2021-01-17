@@ -266,5 +266,7 @@ namespace NovemberProjektet
         
         //För att göra koden otroligt mycket enklare att läsa och göra prestandan bättre för programmet och gjort det mindre så hade jag velat göra en metod som PLayerPlaceShips som hade gjort
         //istället för att ha en egen metod för den datatypen en universiell metod som hade tagit in olika datatyper i parametern och då kunnat göra samma jobb med mindre kod och bättre prestanda. 
+        //Jag hade velat använda mig av en enum för om skeppet var vertical eller horizontal, detta hade gjort det lättare när man kodade då man inte kan skriva stringen fel utan istället haft en boolliknande variabel,
+        //i eftertanke hade man kunnat göra en bool som heter isHorizontal som antingen är true eller false, det hade varit en mycket enklare lösning... 
     }
 }
