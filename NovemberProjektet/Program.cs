@@ -26,16 +26,20 @@ namespace NovemberProjektet
             Cruiser[] cruisers = new Cruiser[3];
             Submarine[] submarines = new Submarine[4];
             Destroyer[] destroyers = new Destroyer[5];
-
+            
+            carriers[0] = new Carrier();
+        }
+    }}
+            /*
             //Metod för att sätta ut sina skepp, tar med sig 
             PlayerPlaceCarriers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
             PlayerPlaceBattleships(carriers, battleships, cruisers, submarines, destroyers, shipLength);
             PlayerPlaceCruisers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
             PlayerPlaceSubmarines(carriers, battleships, cruisers, submarines, destroyers, shipLength);
             PlayerPlaceDestroyers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
-            /*//kör spelet
+            *//*//kör spelet
             PlayGame(player1, player2);*/
-            Console.ReadLine();
+            /*Console.ReadLine();
         }
 
         static void PlayerPlaceCarriers(Carrier[] carriers, Battleship[] battleships, Cruiser[] cruisers, Submarine[] submarines, Destroyer[] destroyers, int shipLength){
@@ -269,4 +273,4 @@ namespace NovemberProjektet
         //Jag hade velat använda mig av en enum för om skeppet var vertical eller horizontal, detta hade gjort det lättare när man kodade då man inte kan skriva stringen fel utan istället haft en boolliknande variabel,
         //i eftertanke hade man kunnat göra en bool som heter isHorizontal som antingen är true eller false, det hade varit en mycket enklare lösning... 
     }
-}
+}*/
