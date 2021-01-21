@@ -25,25 +25,29 @@ namespace NovemberProjektet
             Submarine[] submarines = new Submarine[4];
             Destroyer[] destroyers = new Destroyer[5];
             
-            carriers[0] = new Carrier();
+            for (int i = 0; i < carriers.Length; i++)
+            {   //Skapar en instans av alla carriers
+                carriers[0] = new Carrier(i);
+            } 
             for (int i = 0; i < battleships.Length; i++)
-            {
-                battleships[i] = new Battleship();
+            {   //Skapar en instans av varje battleship
+                battleships[i] = new Battleship(i);
             }
             for (int i = 0; i < cruisers.Length; i++)
             {
-                cruisers[i] = new Cruiser();
+                cruisers[i] = new Cruiser(i);
             }
             for (int i = 0; i < submarines.Length; i++)
             {
-                submarines[i] = new Submarine();
+                submarines[i] = new Submarine(i);
             }
             for (int i = 0; i < destroyers.Length; i++)
             {
-                destroyers[i] = new Destroyer();
+                destroyers[i] = new Destroyer(i);
             }
         }
-    }}
+    }
+}
             /*
             //Metod för att sätta ut sina skepp, tar med sig 
             PlayerPlaceCarriers(carriers, battleships, cruisers, submarines, destroyers, shipLength);
