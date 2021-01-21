@@ -15,8 +15,6 @@ namespace NovemberProjektet
             Player player1 = new Player();
             Player player2 = new Player();
 
-            int shipLength = 0;
-
             Console.WriteLine("Sänka skepp");
             Console.WriteLine("-------------------------------------------------------------------------------");
             Console.WriteLine();
@@ -28,6 +26,22 @@ namespace NovemberProjektet
             Destroyer[] destroyers = new Destroyer[5];
             
             carriers[0] = new Carrier();
+            for (int i = 0; i < battleships.Length; i++)
+            {
+                battleships[i] = new Battleship();
+            }
+            for (int i = 0; i < cruisers.Length; i++)
+            {
+                cruisers[i] = new Cruiser();
+            }
+            for (int i = 0; i < submarines.Length; i++)
+            {
+                submarines[i] = new Submarine();
+            }
+            for (int i = 0; i < destroyers.Length; i++)
+            {
+                destroyers[i] = new Destroyer();
+            }
         }
     }}
             /*

@@ -4,18 +4,17 @@ namespace NovemberProjektet
 {
     public class Battleship : Ship
     {
-        public static int battleshipLength = 4;
         public Battleship(/*int x, int y*/)
         {
             xPos = 0;
             yPos = 0;
-            length = battleshipLength;
+            shipLength = 4;
             direction = "vertical";
-            PlayerPlaceCarriers(xPos, yPos);
+            PlayerPlaceBattleship(xPos, yPos, shipLength);
         }
 
-        static void PlayerPlaceCarriers(int xPos, int yPos){
-            int shipLength = Battleship.battleshipLength;
+        static void PlayerPlaceBattleship(int xPos, int yPos, int shipLength){
+            
             bool finished = false;
 
             Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");

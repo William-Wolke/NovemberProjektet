@@ -4,18 +4,16 @@ namespace NovemberProjektet
 {
     class Carrier : Ship
     {
-        public static int carrierLength = 5;
         public Carrier(/*int x, int y*/)
         {
             xPos = 0;
             yPos = 0;
-            length = carrierLength;
+            shipLength = 5;
             direction = "vertical";
-            PlayerPlaceCarriers(xPos, yPos);
+            PlayerPlaceCarrier(xPos, yPos, shipLength);
         }
 
-        static void PlayerPlaceCarriers(int xPos, int yPos){
-            int shipLength = Carrier.carrierLength;
+        static void PlayerPlaceCarrier(int xPos, int yPos, int shipLength){
             bool finished = false;
 
             Console.WriteLine("Sätt ut dina skepp, det är " + shipLength +" rutor långt:");
